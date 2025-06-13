@@ -8,48 +8,56 @@
     body {
       font-family: 'Candara', sans-serif;
       color: #990D66;
-      max-width: 90%;       
-      margin: 10px auto;  
+      max-width: 90%;
+      margin: 10px auto;
       padding: 10px;
       background: #f9f5f2;
     }
+
     img {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 10px 0;
     }
+
     .back-button {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 8px 16px;
-  background-color: #990D66;   /* твой фирменный цвет */
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  box-shadow: 0 3px 6px rgba(153, 13, 102, 0.4);
-  transition: background-color 0.3s ease;
-}
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 8px 16px;
+      background-color: #990D66;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(153, 13, 102, 0.4);
+      transition: background-color 0.3s ease;
+    }
 
-.back-button:hover {
-  background-color: #7a0a53; 
-.content-wrapper {
-  display: flex;
-  gap: 20px; /* расстояние между колонками */
-  align-items: flex-start;
-}
+    .back-button:hover {
+      background-color: #7a0a53;
+    }
 
-.text-block {
-  flex: 1; /* занимает всё свободное место */
-}
+    .content-wrapper {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
 
-.image-block img {
-  max-width: 300px; /* или по твоему вкусу */
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-}
+    .text-block {
+      flex: 1;
+    }
+
+    .image-block {
+      max-width: 300px;
+      flex-shrink: 0;
+    }
+
+    .image-block img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body>
@@ -57,63 +65,67 @@
   <h1>Стихи разных лет</h1>
 
   <section>
-  <div class="content-wrapper">
-    <div class="text-block">
-    <h2>СВОБОДНЫЙ СТИХ</h2>
-    <p>Обращаюсь к тебе, гражданину! <br>
-       Что мне, дёргать тебя за штанину?<br>
-Ты – китаец, француз, московит,<br>
-Ты – отважен, умел, мозговит,<br>
-Ты – зубастый, рукастый, стопастый,<br>
-Ты – стоухий, стоглазый, стопастый,<br>
-Мускулист, бицепсат и прессат –<br>
-Коллективный такой адресат.<br>
-<br>
-Так слушай меня внимательно!<br>
-<br>
-Выступая со сцены с докладом,<br>
-Ты глаголом сердца жги дотла там.<br>
-Выступая в защиту души,<br>
-Прилагательным их потуши.<br>
-Выступая за рамки устоя,<br>
-Ты заполни собою пустое<br>
-Или полное опустоши.<br>
-<br>
-Выступая, как пот на лице,<br>
-Сотвори пиетет в наглеце,<br>
-Сотвори доброту в подлеце,<br>
-Сотвори тишину в беглеце.<br>
-<br>
-Выступая, будь неудобен всем.<br>
-<br>
-В пелене ли, в пелёнках, в плену ты –<br>
-Не молчи ни единой минуты.<br>
-Кто-то вздрогнет, всхохочет, всплакнёт –<br>
-Всё записывай тут же в блокнот.<br>
-Выражайся как можно честнее –<br>
-Без метафоры лучше, чем с нею,<br>
-Вне традиции лучше, чем в ней.<br>
-Будь наглядней, ясней и явней<br>
-И для вечности – не для блезиру –<br> 
-Структурируй и вербализируй.<br>
-<br>
-Не давай тишине прозвучать громче тебя.<br>
-<br>
-* * *<br>
-<br>
-Если кто в любопытстве мальчишечьем<br>
-Спросит – дескать, чего достиг?<br>
-Отвечай: формулировал чище, чем<br>
-Получается этот стих.<br>
-<br>
-<i>13.06.2025</i>
-</p>
-    <img src="svobodnyj.jpg" width="350">
-</div>
-<div class="image-block">
- <img src="rylo.png" width="700"/>
-</div>
-</div>
-</section>
+    <div class="content-wrapper">
+      
+      <div class="text-block">
+        <h2>СВОБОДНЫЙ СТИХ</h2>
+        <p>
+          Обращаюсь к тебе, гражданину! <br>
+          Что мне, дёргать тебя за штанину?<br>
+          Ты – китаец, француз, московит,<br>
+          Ты – отважен, умел, мозговит,<br>
+          Ты – зубастый, рукастый, стопастый,<br>
+          Ты – стоухий, стоглазый, стопастый,<br>
+          Мускулист, бицепсат и прессат –<br>
+          Коллективный такой адресат.<br><br>
+
+          Так слушай меня внимательно!<br><br>
+
+          Выступая со сцены с докладом,<br>
+          Ты глаголом сердца жги дотла там.<br>
+          Выступая в защиту души,<br>
+          Прилагательным их потуши.<br>
+          Выступая за рамки устоя,<br>
+          Ты заполни собою пустое<br>
+          Или полное опустоши.<br><br>
+
+          Выступая, как пот на лице,<br>
+          Сотвори пиетет в наглеце,<br>
+          Сотвори доброту в подлеце,<br>
+          Сотвори тишину в беглеце.<br><br>
+
+          Выступая, будь неудобен всем.<br><br>
+
+          В пелене ли, в пелёнках, в плену ты –<br>
+          Не молчи ни единой минуты.<br>
+          Кто-то вздрогнет, всхохочет, всплакнёт –<br>
+          Всё записывай тут же в блокнот.<br>
+          Выражайся как можно честнее –<br>
+          Без метафоры лучше, чем с нею,<br>
+          Вне традиции лучше, чем в ней.<br>
+          Будь наглядней, ясней и явней<br>
+          И для вечности – не для блезиру –<br> 
+          Структурируй и вербализируй.<br><br>
+
+          Не давай тишине прозвучать громче тебя.<br><br>
+
+          * * *<br><br>
+
+          Если кто в любопытстве мальчишечьем<br>
+          Спросит – дескать, чего достиг?<br>
+          Отвечай: формулировал чище, чем<br>
+          Получается этот стих.<br><br>
+
+          <i>13.06.2025</i>
+        </p>
+        <img src="svobodnyj.jpg" width="350">
+      </div>
+
+      <div class="image-block">
+        <img src="rylo.png">
+      </div>
+      
+    </div>
+  </section>
 </body>
 </html>
