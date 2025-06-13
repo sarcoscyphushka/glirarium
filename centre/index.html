@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Глирарий</title>
+  <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Зачем я здесь?</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    body {
+      font-family: 'Candara', sans-serif;
+      color: #990D66;
+      max-width: 90%;
+      margin: 10px auto;
+      padding: 10px;
+      background: #f9f5f2;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 8px 16px;
+      background-color: #990D66;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(153, 13, 102, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #7a0a53;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .text-block {
+      flex: 1;
+    }
+
+    .image-block {
+      max-width: 700px;
+      flex-shrink: 0;
+    }
+
+    .image-block img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    .footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.footer a {
+  color: #990D66;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
 </head>
 <body>
-  <h1>На случай, если случится всемирный потоп или что похлеще, вся Соня на одной странице хранится здесь.</h1>
-  <p>Какой в этом смысл, посмотрим.</p>
+  <a href="../" class="back-button">← Вернуться к истокам</a>
+  <h1>Зачем я здесь?</h1>
+
+  <section>
+    <div class="content-wrapper">
+      
+      <div class="text-block">
+  <h1>На дворе 2025 год.</h1>
+  <p>Я чувствую себя уязвимой. И речь не о моей тушке, а о тех килотоннах текста, которые я успела произвести за более безопасные годы.<br>
+  Постепенно блокируются все известные вам сайты. Скорее всего, рано или поздно мои каналы и сообщества тоже пропадут из доступа.<br>
+  Репозиторию гитхаба я доверяю чуть больше. Ссылка на него будет известна только тем, кого я знаю лично. Это — наш потęнциально последний канал коммуникации.<br>
+  Однако, пользоваться этим репозиторием можно и просто как сайтом, если для вас это удобнее.
+  </p>
+   <img src="universecentre.jpg" width="800">
+      </div>
+
+      <div class="image-block">
+        <img src="rylo.png">
+      </div>
+      
+    </div>
+  </section>
 </body>
 </html>
