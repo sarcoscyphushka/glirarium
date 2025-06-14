@@ -21,12 +21,12 @@
       margin-bottom: 30px;
     }
 
-    .intro-section img {
-      width: 160px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
+  .intro-section img {
+  width: 300px; 
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
 
     .intro-text {
       flex: 1;
@@ -61,30 +61,28 @@
     .section-button:hover {
       transform: scale(1.05);
     }
+  .text-and-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  }
+
+.button-grid {
+  display: flex;
+  flex-direction: column; /* Кнопки в столбик */
+  gap: 10px;
+  margin-top: 10px;
+  }
 
     .seminar { background-color: #6A5ACD; }
     .botanika { background-color: #228B22; }
     .evolyuthija { background-color: #DAA520; }
     .zoologija { background-color: #DC143C; }
-    .qkologija { background-color: #4682B4; }
-    .taksonomija { background-color: #6b00ff }
-
-    @media (max-width: 600px) {
-      .intro-section {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .button-grid {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .section-button {
-        width: 100%;
-        text-align: center;
-      }
-       .footer {
+    .qkologija { background-color: #90ee90; } /* светло-салатовый */
+    .taksonomija { background-color: #d8b4ff; } /* светло-фиолетовый */
+ 
+    .footer {
       margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid #ccc;
@@ -102,6 +100,21 @@
     .footer a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 600px) {
+      .intro-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .button-grid {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .section-button {
+        width: 100%;
+        text-align: center;
+      }
     .bottom-image {
   margin-top: 40px;
   text-align: left;
@@ -117,28 +130,26 @@
   </style>
 </head>
 <body>
-
-  <div class="intro-section">
-    <img src="nikcomyshi.jpg" width="300px">
+<div class="intro-section">
+  <img src="nikcomyshi.jpg">
+  <div class="text-and-buttons">
     <div class="intro-text">
       <h1>Школа НИкЧОМ</h1>
-      <p><strong>Школа НИкЧОМ</strong> (Неувядающего Интереса к Чудесам Окружающего Мира!) — это небольшая авторская школа, предназначенная в первую очередь 
+      <p><strong>Школа НИкЧОМ</strong>Неувядающего Интереса к Чудесам Окружающего Мира!) — это небольшая авторская школа, предназначенная в первую очередь 
         для школьников с 6 по 11 класс, которые интересуются современной биологией и смежными науками, по совместительству — лучшее место на Земле.
         Самое ценное, как мне кажется, в том, что мы очень по-человечески относимся к любой нашей функции, но притом не стесняемся научной глубины. 
         А остальное из этого проистекает само собой. <br><br>
         Подробную информацию о самой школе можно получить в её <a href="ttps://t.me/nikchom" rel="noopener noreferrer">Телеграм-канале</a>, здесь же собраны ссылки
-        на материалы к моим курсам, которые я читала на школе. <br>
-        <h4>— Соня</h4>        
-      </p>
+        на материалы к моим курсам, которые я читала на школе.<br><h4>— Соня</h4></p>
     </div>
-  </div>
-  <div class="button-grid">
-    <a href="seminar/" class="section-button seminar">Семинар</a>
-    <a href="botanika/" class="section-button botanika">Ботаника</a>
-    <a href="evolyuthija/" class="section-button evolyuthija">Эволюция</a>
-    <a href="zoologija/" class="section-button zoologija">Зоология</a>
-    <a href="qkologija/" class="section-button qkologija">Экология</a>
-    <a href="taksonomija/" class="section-button taksonomija">Таксономия</a>
+    <div class="button-grid">
+      <a href="seminar/" class="section-button seminar">Семинар</a>
+      <a href="botanika/" class="section-button botanika">Ботаника</a>
+      <a href="evolyuthija/" class="section-button evolyuthija">Эволюция</a>
+      <a href="zoologija/" class="section-button zoologija">Зоология</a>
+      <a href="qkologija/" class="section-button qkologija">Экология</a>
+      <a href="taksonomija/" class="section-button taksonomija">Таксономия</a>
+    </div>
   </div>
   <div class="bottom-image">
      <img src="tipa_prepodka.jpg" alt="Преподаю...">
