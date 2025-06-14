@@ -113,15 +113,41 @@
 
   .image-block {
     margin-top: 20px;
+}
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #990D66;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(153, 13, 102, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #7a0a53;
+}
+
 .right-block {
   display: flex;
-  flex-direction: row;  /* строка, а не колонка */
+  flex-direction: row;
   align-items: center;
   gap: 15px;
   max-width: 70%;
+  flex-wrap: wrap; /* чтобы при нехватке места переносить */
 }
 
-/* Сделаем заголовок без margin, и с чуть большим шрифтом */
 .years-header {
   margin: 0;
   color: #990D66;
@@ -132,7 +158,6 @@
   white-space: nowrap;
 }
 
-/* Ссылки будут обычной строкой */
 .year-links {
   font-size: 0.95em;
   white-space: nowrap;
@@ -148,7 +173,7 @@
   text-decoration: underline;
 }
 
-/* Адаптив для мобильных: все в столбик */
+/* Адаптив для мобильных */
 @media (max-width: 600px) {
   .top-nav {
     flex-direction: column;
