@@ -97,6 +97,24 @@
 #scrollTopBtn:hover {
   background-color: #7a0a53;
 }
+@media (max-width: 768px) {
+  .image-block img {
+    max-width: 150px; /* меньше ширина на мобильных */
+  }
+
+  .content-wrapper {
+    flex-direction: column; /* чтобы текст и картинка шли друг за другом */
+    align-items: center; /* чтобы по центру */
+  }
+
+  .text-block {
+    width: 100%;
+  }
+
+  .image-block {
+    margin-top: 20px;
+  }
+}
   </style>
 </head>
 <body>
