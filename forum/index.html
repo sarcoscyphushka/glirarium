@@ -32,6 +32,21 @@
     .comments-container {
       max-width: 800px;
       margin: 0 auto 40px auto;
+      background-color: #fff9fc; /* светло-розоватый фон */
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(153, 13, 102, 0.15);
+      padding: 20px;
+      min-height: 700px; /* чуть выше для удобства */
+      overflow: visible; /* убираем внутренний скролл */
+    }
+
+    h2.forum-title {
+      text-align: center;
+      color: #990D66;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-family: 'Candara', sans-serif;
+      user-select: none;
     }
 
     .footer {
@@ -66,13 +81,14 @@
   <a href="/glirarium/" class="back-button">← Вернуться к истокам</a>
 
   <div class="comments-container">
+    <h2 class="forum-title">Форум</h2>
     <div id="cusdis_thread"
          data-host="https://cusdis.com"
          data-app-id="c6280dbc-e834-41b9-ab97-06ad2fbc3c46"
          data-page-id="forum"
          data-page-url="https://sarcoscyphushka.github.io/glirarium/forum/"
          data-page-title="Форум"
-         style="min-height: 600px; max-height: none;">
+         style="min-height: 650px; max-height: none;">
     </div>
   </div>
 
@@ -88,7 +104,6 @@
   </div>
 
 <script>
-  // Загружаем скрипт Cusdis динамически после полной загрузки страницы
   window.addEventListener('load', function() {
     var script = document.createElement('script');
     script.src = "https://cusdis.com/js/cusdis.es.js";
