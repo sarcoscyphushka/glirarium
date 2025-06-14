@@ -16,17 +16,18 @@
     .intro-section {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-start;
       gap: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
-  .intro-section img {
-  width: 300px; 
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  }
+    .intro-section img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
 
     .intro-text {
       flex: 1;
@@ -38,11 +39,25 @@
       color: #990D66;
     }
 
-    .button-grid {
+    .content-section {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .bottom-image img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .button-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
     }
 
     .section-button {
@@ -56,34 +71,22 @@
       text-decoration: none;
       box-shadow: 0 3px 6px rgba(0,0,0,0.2);
       transition: transform 0.2s ease;
+      text-align: center;
     }
 
     .section-button:hover {
       transform: scale(1.05);
     }
-  .text-and-buttons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  }
 
-.button-grid {
-  display: flex;
-  flex-direction: column; /* Кнопки в столбик */
-  gap: 10px;
-  margin-top: 10px;
-  }
-
-    .seminar { background-color: #6A5ACD; }
-    .botanika { background-color: #228B22; }
+    .seminar { background-color: #5b4bc5; }
+    .botanika { background-color: #1e6f1e; }
     .evolyuthija { background-color: #DAA520; }
     .zoologija { background-color: #DC143C; }
-    .qkologija { background-color: #90ee90; } /* светло-салатовый */
-    .taksonomija { background-color: #d8b4ff; } /* светло-фиолетовый */
- 
+    .qkologija { background-color: #3d9943; }  /* тёмно-салатовый */
+    .taksonomija { background-color: #8351cc; } /* тёмно-фиолетовый */
+
     .footer {
-      margin-top: 40px;
+      margin-top: 60px;
       padding-top: 20px;
       border-top: 1px solid #ccc;
       text-align: center;
@@ -100,47 +103,43 @@
     .footer a:hover {
       text-decoration: underline;
     }
+
     @media (max-width: 600px) {
-      .intro-section {
+      .intro-section, .content-section {
         flex-direction: column;
         align-items: flex-start;
       }
 
       .button-grid {
-        flex-direction: column;
         width: 100%;
       }
 
       .section-button {
         width: 100%;
-        text-align: center;
       }
-    .bottom-image {
-  margin-top: 40px;
-  text-align: left;
-}
-
-.bottom-image img {
-  width: 600px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
+    }
   </style>
 </head>
 <body>
-<div class="intro-section">
-  <img src="nikcomyshi.jpg">
-  <div class="text-and-buttons">
+
+  <div class="intro-section">
+    <img src="nikcomyshi.jpg" alt="НИкЧОМ мыши">
     <div class="intro-text">
       <h1>Школа НИкЧОМ</h1>
-      <p><strong>Школа НИкЧОМ</strong>Неувядающего Интереса к Чудесам Окружающего Мира!) — это небольшая авторская школа, предназначенная в первую очередь 
+      <p><strong>Школа НИкЧОМ</strong> (Неувядающего Интереса к Чудесам Окружающего Мира!) — это небольшая авторская школа, предназначенная в первую очередь 
         для школьников с 6 по 11 класс, которые интересуются современной биологией и смежными науками, по совместительству — лучшее место на Земле.
         Самое ценное, как мне кажется, в том, что мы очень по-человечески относимся к любой нашей функции, но притом не стесняемся научной глубины. 
         А остальное из этого проистекает само собой. <br><br>
-        Подробную информацию о самой школе можно получить в её <a href="ttps://t.me/nikchom" rel="noopener noreferrer">Телеграм-канале</a>, здесь же собраны ссылки
-        на материалы к моим курсам, которые я читала на школе.<br><h4>— Соня</h4></p>
+        Подробную информацию о самой школе можно получить в её <a href="https://t.me/nikchom" rel="noopener noreferrer">Телеграм-канале</a>, здесь же собраны ссылки
+        на материалы к моим курсам, которые я читала на школе. <br>
+        <h4>— Соня</h4>        
+      </p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="bottom-image">
+      <img src="tipa_prepodka.jpg" alt="Преподаю...">
     </div>
     <div class="button-grid">
       <a href="seminar/" class="section-button seminar">Семинар</a>
@@ -151,14 +150,12 @@
       <a href="taksonomija/" class="section-button taksonomija">Таксономия</a>
     </div>
   </div>
-  <div class="bottom-image">
-     <img src="tipa_prepodka.jpg" alt="Преподаю...">
-  </div>
- <footer class="footer">
-  <a href="https://t.me/sarcoscyphushka" rel="noopener noreferrer">Соня в Телеграме</a> |
-  <a href="https://vk.com/postaestetix" rel="noopener noreferrer">Соня ВКонтакте</a> |
-  <a href="https://ru.wikipedia.org/wiki/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Postaestetix" rel="noopener noreferrer">Соня в Википедии</a> |
-  <a href="/glirarium/">Основное пространство сайта</a>
+
+  <footer class="footer">
+    <a href="https://t.me/sarcoscyphushka" rel="noopener noreferrer">Соня в Телеграме</a> |
+    <a href="https://vk.com/postaestetix" rel="noopener noreferrer">Соня ВКонтакте</a> |
+    <a href="https://ru.wikipedia.org/wiki/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Postaestetix" rel="noopener noreferrer">Соня в Википедии</a> |
+    <a href="/glirarium/">Основное пространство сайта</a>
   </footer>
 
 </body>
