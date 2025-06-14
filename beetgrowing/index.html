@@ -39,25 +39,27 @@
     }
 
     .content-wrapper {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* чтобы на очень узких экранах картинка могла упасть вниз */
+}
 
-    .text-block {
-      flex: 1;
-    }
+.text-block {
+  flex: 1 1 60%; /* занимает минимум 60%, но может сжиматься */
+}
 
-    .image-block {
-      max-width: 700px;
-      flex-shrink: 0;
-    }
+.image-block {
+  flex: 0 0 300px; /* фиксированная ширина блока с картинкой (300px), не сжимается */
+  max-width: 700px; /* максимум */
+}
 
-    .image-block img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    }
+.image-block img {
+  width: 100%; /* занимает всю ширину блока */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
     .footer {
   margin-top: 40px;
   padding-top: 20px;
@@ -106,19 +108,6 @@
     max-width: 150px; /* или меньше, если нужно */
     width: 100%;
   }
-}
-
-  .content-wrapper {
-    flex-direction: column; /* чтобы текст и картинка шли друг за другом */
-    align-items: center; /* чтобы по центру */
-  }
-
-  .text-block {
-    width: 100%;
-  }
-
-  .image-block {
-    margin-top: 20px;
 }
 }
 .top-nav {
