@@ -32,12 +32,10 @@
     .comments-container {
       max-width: 800px;
       margin: 0 auto 40px auto;
-      background-color: #fff9fc; /* светло-розоватый фон */
+      background-color: #fff9fc;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(153, 13, 102, 0.15);
       padding: 20px;
-      min-height: 700px; /* чуть выше для удобства */
-      overflow: visible; /* убираем внутренний скролл */
     }
 
     h2.forum-title {
@@ -80,17 +78,17 @@
 
   <a href="/glirarium/" class="back-button">← Вернуться к истокам</a>
 
-<div class="comments-container">
-  <h2 class="forum-title">Форум</h2>
-  <iframe
-    src="https://cusdis.com/embed/c6280dbc-e834-41b9-ab97-06ad2fbc3c46?url=https%3A%2F%2Fsarcoscyphushka.github.io%2Fglirarium%2Fforum%2F"
-    style="width: 100%; height: 700px;"
-    scrolling="yes"
-    frameborder="0"
-    loading="lazy"
-    allow="clipboard-write"
-  ></iframe>
-</div>
+  <div class="comments-container">
+    <h2 class="forum-title">Форум</h2>
+    <iframe
+      src="https://cusdis.com/embed/c6280dbc-e834-41b9-ab97-06ad2fbc3c46?pageId=forum"
+      style="width: 100%; height: 700px;"
+      scrolling="yes"
+      frameborder="0"
+      loading="lazy"
+      allow="clipboard-write"
+    ></iframe>
+  </div>
 
   <footer class="footer">
     <a href="https://t.me/sarcoscyphushka" rel="noopener noreferrer">Соня в Телеграме</a> |
@@ -103,14 +101,5 @@
     Все материалы, размещённые на этом сайте, являются общественным достоянием. Разрешается использование материалов в любых целях.
   </div>
 
-<script>
-  window.addEventListener('load', function() {
-    var script = document.createElement('script');
-    script.src = "https://cusdis.com/js/cusdis.es.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-  });
-</script>
 </body>
 </html>
