@@ -113,30 +113,29 @@
 
   .image-block {
     margin-top: 20px;
-
-  .top-nav-wrapper {
-  margin-bottom: 20px;
+.right-block {
+  display: flex;
+  flex-direction: row;  /* строка, а не колонка */
+  align-items: center;
+  gap: 15px;
+  max-width: 70%;
 }
 
+/* Сделаем заголовок без margin, и с чуть большим шрифтом */
 .years-header {
-  text-align: center;
-  font-weight: 600;
+  margin: 0;
   color: #990D66;
-  margin-bottom: 8px;
-  font-size: 1.3em;
+  font-weight: 600;
   font-family: 'Candara', sans-serif;
   letter-spacing: 0.05em;
+  font-size: 1.3em;
+  white-space: nowrap;
 }
 
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
+/* Ссылки будут обычной строкой */
 .year-links {
   font-size: 0.95em;
+  white-space: nowrap;
 }
 
 .year-links a {
@@ -149,15 +148,30 @@
   text-decoration: underline;
 }
 
-/* Адаптация для мобильных */
+/* Адаптив для мобильных: все в столбик */
 @media (max-width: 600px) {
   .top-nav {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-}
 
+  .right-block {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+    gap: 6px;
+  }
+
+  .years-header {
+    font-size: 1.1em;
+    white-space: normal;
+  }
+
+  .year-links {
+    white-space: normal;
+  }
+}
   }
 }
   </style>
