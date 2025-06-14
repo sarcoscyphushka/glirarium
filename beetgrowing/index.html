@@ -84,24 +84,34 @@
       text-decoration: underline;
     }
 
-    /* Контент с картинкой и текстом */
-    .content-wrapper {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      flex-wrap: wrap; /* чтобы на узких экранах картинка опускалась вниз */
-      margin-bottom: 40px;
-    }
+ .content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* чтобы на узких экранах можно было переносить */
+}
 
-    .text-block {
-      flex: 1 1 60%;
-      min-width: 250px;
-    }
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .image-block {
-      flex: 0 0 350px; /* фиксированная ширина для картинки */
-      max-width: 700px;
-    }
+  .image-block {
+    max-width: 100%;
+    width: 150px;  /* задаём адекватную ширину картинки */
+    margin-top: 15px; /* отступ сверху, чтобы отделить от текста */
+  }
+
+  .image-block img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-block {
+    width: 100%;
+  }
+}
 
     /* Футер */
     .footer {
