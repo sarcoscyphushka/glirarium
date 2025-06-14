@@ -7,11 +7,12 @@
   <style>
     body {
       font-family: 'Candara', sans-serif;
-      background: #f9f9f9;
+      background-color: #f9f9f9;
       color: #333;
       margin: 20px;
       padding: 0;
     }
+
     .back-button {
       display: inline-block;
       margin-bottom: 20px;
@@ -23,10 +24,16 @@
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
+
+    .back-button:hover {
+      background-color: #7d0a55;
+    }
+
     .comments-container {
       max-width: 800px;
-      margin: 0 auto 40px;
+      margin: 0 auto 40px auto;
     }
+
     .footer {
       margin-top: 40px;
       padding-top: 20px;
@@ -53,13 +60,24 @@
       font-size: 0.9em;
     }
   </style>
+
+  <!-- Скрипт Cusdis -->
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </head>
 <body>
-  <a href="/glirarium/" class="back-button">← Вернуться к истокам</a>
+
+  <a href="/glirarium/" class="back-button">← на главную</a>
+
   <div class="comments-container">
-    <div id="cusdis_thread"></div>
+    <div id="cusdis_thread"
+         data-host="https://cusdis.com"
+         data-app-id="c6280dbc-e834-41b9-ab97-06ad2fbc3c46"
+         data-page-id="forum"
+         data-page-url="https://sarcoscyphushka.github.io/glirarium/forum/"
+         data-page-title="Форум"></div>
   </div>
- <footer class="footer">
+
+  <footer class="footer">
     <a href="https://t.me/sarcoscyphushka" rel="noopener noreferrer">Соня в Телеграме</a> |
     <a href="https://vk.com/postaestetix" rel="noopener noreferrer">Соня ВКонтакте</a> |
     <a href="https://ru.wikipedia.org/wiki/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Postaestetix" rel="noopener noreferrer">Соня в Википедии</a> |
@@ -70,23 +88,5 @@
     Все материалы, размещённые на этом сайте, являются общественным достоянием. Разрешается использование материалов в любых целях.
   </div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const script = document.createElement('script');
-      script.src = 'https://cusdis.com/js/widget/lang/ru.js';
-      script.async = true;
-      script.onload = () => {
-        window.renderCusdis({
-          el: document.getElementById('cusdis_thread'),
-          host: 'https://cusdis.com',
-          appId: 'c6280dbc-e834-41b9-ab97-06ad2fbc3c46',
-          pageId: 'forum',
-          pageTitle: 'Форум',
-          pageUrl: 'https://sarcoscyphushka.github.io/glirarium/forum/'
-        });
-      };
-      document.body.appendChild(script);
-    });
-  </script>
 </body>
 </html>
