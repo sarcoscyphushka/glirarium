@@ -19,12 +19,11 @@
       height: auto;
       display: block;
       margin: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
 
-    a.back-button {
+    .back-button {
       display: inline-block;
+      margin-bottom: 15px;
       padding: 8px 16px;
       background-color: #990D66;
       color: white;
@@ -33,87 +32,35 @@
       font-weight: bold;
       box-shadow: 0 3px 6px rgba(153, 13, 102, 0.4);
       transition: background-color 0.3s ease;
-      margin-bottom: 15px;
     }
 
-    a.back-button:hover {
+    .back-button:hover {
       background-color: #7a0a53;
     }
 
-    /* Навигация сверху */
-    nav.top-nav {
+    .content-wrapper {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: nowrap;
     }
 
-    /* Правая часть с заголовком и ссылками */
-    .right-block {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 15px;
-      max-width: 70%;
+    .text-block {
+      flex: 1 1 auto;
     }
 
-    h2.years-header {
-      margin: 0;
-      color: #990D66;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      font-size: 1.3em;
-      white-space: nowrap;
-      font-family: 'Candara', sans-serif;
+    .image-block {
+      flex: 0 0 400px; /* фиксированная ширина картинки на десктопе */
+      max-width: 400px;
     }
 
-    .year-links {
-      font-size: 0.95em;
-      white-space: nowrap;
+    .image-block img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
 
-    .year-links a {
-      color: #990D66;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-
-    .year-links a:hover {
-      text-decoration: underline;
-    }
-
- .content-wrapper {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  flex-wrap: wrap; /* чтобы на узких экранах можно было переносить */
-}
-
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-block {
-    max-width: 100%;
-    width: 150px;  /* задаём адекватную ширину картинки */
-    margin-top: 15px; /* отступ сверху, чтобы отделить от текста */
-  }
-
-  .image-block img {
-    width: 100%;
-    height: auto;
-  }
-
-  .text-block {
-    width: 100%;
-  }
-}
-
-    /* Футер */
     .footer {
       margin-top: 40px;
       padding-top: 20px;
@@ -133,9 +80,8 @@
       text-decoration: underline;
     }
 
-    /* Кнопка наверх */
     #scrollTopBtn {
-      display: none;
+      display: none; 
       position: fixed;
       bottom: 40px;
       right: 30px;
@@ -156,31 +102,75 @@
       background-color: #7a0a53;
     }
 
-    /* Мобильная адаптивность */
+    /* --- Адаптив --- */
     @media (max-width: 768px) {
-      .image-block {
-        flex: 1 1 100%; /* занимает всю ширину */
-        max-width: 100%;
-      }
-
-      .image-block img {
-        max-width: 150px;
-        margin: 0 auto;
-      }
-
       .content-wrapper {
         flex-direction: column;
+        flex-wrap: nowrap;
         align-items: center;
       }
 
-      .text-block {
-        flex: 1 1 100%;
-        min-width: auto;
+      .image-block {
+        flex: 0 0 auto;
+        max-width: 90%;
+        width: 300px;
+        margin-top: 15px;
       }
     }
 
+    @media (max-width: 400px) {
+      .image-block {
+        width: 90%;
+        max-width: 280px;
+      }
+    }
+
+    /* Навигация */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .right-block {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+      max-width: 70%;
+      flex-wrap: wrap;
+    }
+
+    .years-header {
+      margin: 0;
+      color: #990D66;
+      font-weight: 600;
+      font-family: 'Candara', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 1.3em;
+      white-space: nowrap;
+    }
+
+    .year-links {
+      font-size: 0.95em;
+      white-space: nowrap;
+    }
+
+    .year-links a {
+      color: #990D66;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .year-links a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 600px) {
-      nav.top-nav {
+      .top-nav {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
@@ -193,7 +183,7 @@
         gap: 6px;
       }
 
-      h2.years-header {
+      .years-header {
         font-size: 1.1em;
         white-space: normal;
       }
