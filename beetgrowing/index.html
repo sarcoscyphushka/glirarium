@@ -97,10 +97,16 @@
 #scrollTopBtn:hover {
   background-color: #7a0a53;
 }
-@media (max-width: 768px) {
-  .image-block img {
-    max-width: 150px; /* меньше ширина на мобильных */
+
+  @media (max-width: 768px) {
+  .image-block {
+    max-width: 100%; /* чтобы блок не ограничивал ширину */
   }
+  .image-block img {
+    max-width: 150px; /* или меньше, если нужно */
+    width: 100%;
+  }
+}
 
   .content-wrapper {
     flex-direction: column; /* чтобы текст и картинка шли друг за другом */
