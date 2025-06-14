@@ -68,13 +68,23 @@
       overflow: visible !important;
     }
   </style>
+
+  <!-- Подключаем скрипт Cusdis -->
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </head>
 <body>
 
   <a href="/glirarium/" class="back-button">← Вернуться к истокам</a>
 
   <div class="comments-container">
-    <div id="cusdis_thread"></div>
+    <div
+      id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="c6280dbc-e834-41b9-ab97-06ad2fbc3c46"
+      data-page-id="forum"
+      data-page-url="https://sarcoscyphushka.github.io/glirarium/forum/"
+      data-page-title="Форум">
+    </div>
   </div>
 
   <footer class="footer">
@@ -87,28 +97,6 @@
   <div class="public-domain-note">
     Все материалы, размещённые на этом сайте, являются общественным достоянием. Разрешается использование материалов в любых целях.
   </div>
-
-  <!-- Скрипт для загрузки и инициализации Cusdis -->
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const script = document.createElement('script');
-      script.src = 'https://cusdis.com/js/cusdis.es.js';
-      script.async = true;
-      script.onload = () => {
-        if (window.renderCusdis) {
-          window.renderCusdis({
-            el: document.getElementById('cusdis_thread'),
-            host: 'https://cusdis.com',
-            appId: 'c6280dbc-e834-41b9-ab97-06ad2fbc3c46',
-            pageId: 'forum',
-            pageTitle: 'Форум',
-            pageUrl: 'https://sarcoscyphushka.github.io/glirarium/forum/'
-          });
-        }
-      };
-      document.body.appendChild(script);
-    });
-  </script>
 
 </body>
 </html>
