@@ -60,9 +60,6 @@
       font-size: 0.9em;
     }
   </style>
-
-  <!-- Скрипт Cusdis -->
-  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </head>
 <body>
 
@@ -76,7 +73,14 @@
          data-page-url="https://sarcoscyphushka.github.io/glirarium/forum/"
          data-page-title="Форум"></div>
   </div>
-
+<div id="cusdis_thread"
+     data-host="https://cusdis.com"
+     data-app-id="c6280dbc-e834-41b9-ab97-06ad2fbc3c46"
+     data-page-id="forum"
+     data-page-url="https://sarcoscyphushka.github.io/glirarium/forum/"
+     data-page-title="Форум"
+     style="min-height: 600px; max-height: none;">
+</div>
   <footer class="footer">
     <a href="https://t.me/sarcoscyphushka" rel="noopener noreferrer">Соня в Телеграме</a> |
     <a href="https://vk.com/postaestetix" rel="noopener noreferrer">Соня ВКонтакте</a> |
@@ -88,5 +92,15 @@
     Все материалы, размещённые на этом сайте, являются общественным достоянием. Разрешается использование материалов в любых целях.
   </div>
 
+<script>
+  // Загружаем скрипт Cusdis динамически после полной загрузки страницы
+  window.addEventListener('load', function() {
+    var script = document.createElement('script');
+    script.src = "https://cusdis.com/js/cusdis.es.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  });
+</script>
 </body>
 </html>
