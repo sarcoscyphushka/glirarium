@@ -38,26 +38,29 @@
       background-color: #7a0a53;
     }
 
-    .content-wrapper {
+   .content-wrapper {
       display: flex;
       gap: 20px;
       align-items: flex-start;
+      flex-wrap: nowrap;
     }
 
     .text-block {
-      flex: 1;
+      flex: 1 1 auto;
     }
 
     .image-block {
-      max-width: 700px;
-      flex-shrink: 0;
+      flex: 0 0 400px; /* фиксированная ширина картинки на десктопе */
+      max-width: 400px;
     }
 
     .image-block img {
       width: 100%;
+      height: auto;
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
+    
     .footer {
   margin-top: 40px;
   padding-top: 20px;
@@ -97,24 +100,28 @@
 #scrollTopBtn:hover {
   background-color: #7a0a53;
 }
-@media (max-width: 768px) {
-  .image-block img {
-    max-width: 150px; /* меньше ширина на мобильных */
-  }
+   @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+      }
 
-  .content-wrapper {
-    flex-direction: column; /* чтобы текст и картинка шли друг за другом */
-    align-items: center; /* чтобы по центру */
-  }
+      .image-block {
+        flex: 0 0 auto;
+        max-width: 90%;
+        width: 300px;
+        margin-top: 15px;
+      }
+    }
 
-  .text-block {
-    width: 100%;
-  }
+    @media (max-width: 400px) {
+      .image-block {
+        width: 90%;
+        max-width: 280px;
+      }
+    }
 
-  .image-block {
-    margin-top: 20px;
-}
-}
 .top-nav {
   display: flex;
   justify-content: space-between;
