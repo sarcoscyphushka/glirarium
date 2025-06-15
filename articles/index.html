@@ -1,7 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <title>Разгоны</title>
-  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="icon" href="../favicon.png" />
+  <style>
+    body {
+      font-family: 'Candara', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 20px;
+      padding: 0;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .intro-section img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .intro-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .intro-text h1 {
+      margin-top: 0;
+      color: #990D66;
+    }
+
+    .content-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .bottom-image img {
+      width: 500px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .button-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .section-button {
+      padding: 14px 22px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+      text-align: center;
+    }
+
+    .section-button:hover {
+      transform: scale(1.05);
+    }
+
+    .telega { background-color: #5b4bc5; }
+    .bajka { background-color: #1e6f1e; }
+    .kolonka { background-color: #DAA520; }
+    .opus { background-color: #DC143C; }
+    .narmudr { background-color: #3d9943; }  
+    .ideja { background-color: #8351cc; } /* тёмно-фиолетовый */
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .footer a {
+      color: #990D66;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  
+  .license-note {
+  text-align: center;
+  color: #000;
+  font-size: 0.9em;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+    @media (max-width: 600px) {
+      .intro-section, .content-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .button-grid {
+        width: 100%;
+      }
+
+      .section-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-Раздел пока не написан<br>
-Вернуться <a href="../">назад</a>.
+ <nav class="top-nav">
+    <a href="../" class="back-button">← Вернуться в поэтичный мир</a>
+ </nav>
+ <div class="intro-section">
+    <img src="razgon.JPG" alt="Разгон">
+    <div class="intro-text">
+      <h1>Коллекция разгонов</h1>
+      <h3>на все случаи жизни</h3>
+      <p>
+        В этом разделе собраны и упорядочены наблюдения, размышления и обобщения по поводу всего,<br>
+        что показалось мне важным. А так уж устроена то ли я, то ли этот мир, то ли мы оба, но<br>
+        важными мне кажутся самые разные и порою не связанные друг с другом вещи. Попытка исчислить<br>
+        количество тем, которые я могу захотеть затронуть, заведомо обречена на провал. Поэтому я<br>
+        разделила субдиректории не по тематическому, а по жанровому принципу.<br><br>
+        
+        В разделе «Телеги» будут храниться рассказы о чём-то, что я узнала, но что нигде до этого не было систематизировано.<br>
+        В разделе «Байки» будут храниться истории из моей жизни.<br>
+        В разделе «Колонки» будут храниться идеологически заряженные телеги, в которых я явно выражаю собственное мнение.<br> 
+        В разделе «Опусы» будут храниться всевозможные нехудожественные простыни текста.<br>
+        В разделе «Простые истины жизни» будет в краткой форме храниться самое главное.<br>
+        Наконец, в раздел «Идеи» я помещу то, что ещё не нашло своей формы и лишь рождается на свет.<br>
+        <h4>— Соня</h4> 
+      </p>
+     </div>
+  </div>
+  <div style="margin-bottom: 30px;">
+    <h1 style="color: #990D66; margin-left: 0;">Что вас интересует?</h1>
+  </div>
+  <div class="content-section">
+    <div class="bottom-image">
+      <img src="borxes.JPG">
+    </div>
+    <div class="button-grid">
+      <a href="telegi/" class="section-button telega">Телеги</a>
+      <a href="bajki/" class="section-button bajka">Байки</a>
+      <a href="kolonki/" class="section-button kolonka">Колонки</a>
+      <a href="opusy/" class="section-button opus">Опусы</a>
+      <a href="istiny/" class="section-button narmudr">Простые истины жизни</a>
+      <a href="idei/" class="section-button ideja">Идеи</a>
+    </div>
+  </div>
+   <footer class="footer">
+    <a href="https://t.me/sarcoscyphushka" rel="noopener noreferrer">Соня в Телеграме</a> |
+    <a href="https://vk.com/postaestetix" rel="noopener noreferrer">Соня ВКонтакте</a> |
+    <a href="https://ru.wikipedia.org/wiki/%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Postaestetix" rel="noopener noreferrer">Соня в Википедии</a> |
+    <a href="/glirarium/">Основное пространство сайта</a>
+  </footer>
+  <div class="license-note">
+    Все материалы, размещённые на этом сайте, являются общественным достоянием. Разрешается использование материалов в любых целях.
+  </div>
+
+</body>
+</html>
