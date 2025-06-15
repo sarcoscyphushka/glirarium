@@ -36,6 +36,35 @@
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(153, 13, 102, 0.15);
       padding: 20px;
+      height: 80vh;
+      overflow-y: auto;
+    }
+
+    #cusdis_thread {
+      width: 100%;
+      min-height: 60vh;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 10px;
+      }
+
+      .comments-container {
+        width: 95vw;
+        height: 70vh;
+        padding: 15px 10px;
+      }
+
+      h2.forum-title {
+        font-size: 1.5em;
+      }
+
+      .comments-container > p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+      }
     }
 
     h2.forum-title {
