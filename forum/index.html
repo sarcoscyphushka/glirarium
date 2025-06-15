@@ -29,16 +29,17 @@
       background-color: #7d0a55;
     }
 
-    .comments-container {
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      background-color: #fff9fc;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(153, 13, 102, 0.15);
-      padding: 20px;
-      height: 80vh;
-      overflow-y: auto;
-    }
+  .comments-container {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  background-color: #fff9fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(153, 13, 102, 0.15);
+  padding: 20px;
+
+  min-height: 60vh; /* минимум высоты, чтобы не сжималось сильно */
+  overflow-y: auto; /* вертикальный скролл, если много комментариев */
+}
 
     #cusdis_thread {
       width: 100%;
@@ -46,27 +47,28 @@
       overflow-y: auto;
     }
 
-    @media (max-width: 600px) {
-      body {
-        margin: 10px;
-      }
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
 
-      .comments-container {
-        width: 95vw;
-        height: 70vh;
-        padding: 15px 10px;
-      }
+  .comments-container {
+    max-width: 100%;
+    min-height: 60vh;
+    padding: 10px;
+    box-shadow: none;
+  }
 
-      h2.forum-title {
-        font-size: 1.5em;
-      }
+  h2.forum-title {
+    font-size: 1.5em;
+  }
 
-      .comments-container > p {
-        font-size: 0.9em;
-        margin-bottom: 15px;
-      }
-    }
-
+  .back-button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+}
+    
     h2.forum-title {
       text-align: center;
       color: #990D66;
@@ -102,6 +104,7 @@
       font-size: 0.9em;
     }
   </style>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 
