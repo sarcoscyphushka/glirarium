@@ -151,9 +151,21 @@
      <li><a href="https://sarcoscyphushka.github.io/glirarium/centre/" target="_blank" rel="noopener noreferrer">раз</a> (основной сайт на гитхабе)</li>
      <li><a href="https://glirarium.netlify.app/centre/" target="_blank" rel="noopener noreferrer">два</a> (автоматически подгружает обновления с гитхаба, пока тот не заблокирован)</li>
      <li><a href="http://s97717jn.beget.tech/centre/" target="_blank" rel="noopener noreferrer">три</a> (обновляется только вручную, поэтому вы можете видеть не последнюю версию)</li>
+     <li><a href="#" id="ipfs-mirror" target="_blank" rel="noopener noreferrer" style="display:none;">четыре</a> (на крайний случай: IPFS-версия; тоже обновляется вручную)</li>
    </ul>
-  <p>Во всех трёх случаях сайт расположен на домене третьего уровня (потому что это бесплатно), в связи с чем его существование зависит 
-     от провайдęра. Если провайдęр заблокируют, доступ к моему сайту тоже будет утрачен, поэтому на всякий случай сайт доверен сразу нескольким провайдęрам.</p>
+  <p>Во всех случаях сайт расположен на домене третьего уровня (потому что это бесплатно), в связи с чем его существование зависит 
+     от провайдера. Если провайдера заблокируют, доступ к моему сайту тоже будет утрачен, поэтому на всякий случай сайт доверен сразу нескольким провайдерам.</p>
 </section>
+
+<script>
+  // Часть ссылки скрыта, чтобы роботы не увидели её прямо в коде
+  const ipfsBase = "https://ipfs.io/ipns/";
+  const ipfsHash = "k51qzi5uqu5diqrzylv6aru6x1b3vse3nry4auo81p43zo6jkncmgdui9rotbs";
+
+  const ipfsLink = document.getElementById("ipfs-mirror");
+  ipfsLink.href = ipfsBase + ipfsHash + "/centre/";
+  ipfsLink.style.display = "inline"; // показываем ссылку пользователям
+  ipfsLink.textContent = "четыре";
+</script>
 </body>
 </html>
