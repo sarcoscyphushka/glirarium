@@ -1,0 +1,23 @@
+name: Deploy to Beget
+
+on:
+  push:
+    branches:
+      - main  # или твоя основная ветка, проверь в репо
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: FTP Deploy to Beget
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ftp.beget.com
+          username: ${{ secrets.BEGET_FTP_USERNAME }}
+          password: ${{ secrets.BEGET_FTP_PASSWORD }}
+          local-dir: ./ # если сайт лежит в корне репозитория
+          server-dir: public_html/
