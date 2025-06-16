@@ -16,8 +16,7 @@ jobs:
       - name: FTP Deploy to Beget
         uses: SamKirkland/FTP-Deploy-Action@v3.1.0
         with:
-          server: ftp.beget.com
-          username: ${{ secrets.BEGET_FTP_USERNAME }}
-          password: ${{ secrets.BEGET_FTP_PASSWORD }}
+          ftp-server: ftp.beget.com
+          ftp-username: ${{ secrets.BEGET_FTP_USERNAME }}
+          ftp-password: ${{ secrets.BEGET_FTP_PASSWORD }}
           local-dir: ./
-          server-dir: public_html/
