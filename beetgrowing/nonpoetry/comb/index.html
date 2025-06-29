@@ -1,7 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Комбинаторная поэзия</title>
-  <link rel="icon" type="image/png" href="../../../favicon.png">
+  <title>Нестихотворное творчество</title>
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <style>
+    body {
+      font-family: 'Candara', sans-serif;
+      color: #990D66;
+      max-width: 90%;
+      margin: 10px auto;
+      padding: 10px;
+      background: #f9f5f2;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 8px 16px;
+      background-color: #990D66;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(153, 13, 102, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #7a0a53;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
+
+    .text-block {
+      flex: 1 1 auto;
+    }
+
+    .image-block {
+      flex: 0 0 400px; /* фиксированная ширина картинки на десктопе */
+      max-width: 400px;
+    }
+
+    .image-block img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .footer a {
+      color: #990D66;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    #scrollTopBtn {
+      display: none; 
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      background-color: #990D66;
+      color: white;
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #7a0a53;
+    }
+
+    /* --- Адаптив --- */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+
+      .image-block {
+        flex: 0 0 auto;
+        max-width: 90%;
+        width: 300px;
+        margin-top: 15px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .image-block {
+        width: 90%;
+        max-width: 280px;
+      }
+    }
+
+    /* Навигация */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .right-block {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+      max-width: 70%;
+      flex-wrap: wrap;
+    }
+
+    .years-header {
+      margin: 0;
+      color: #990D66;
+      font-weight: 600;
+      font-family: 'Candara', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 1.3em;
+      white-space: nowrap;
+    }
+
+    .year-links {
+      font-size: 0.95em;
+      white-space: nowrap;
+    }
+
+    .year-links a {
+      color: #990D66;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .year-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .right-block {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        gap: 6px;
+      }
+
+      .years-header {
+        font-size: 1.1em;
+        white-space: normal;
+      }
+
+      .year-links {
+        white-space: normal;
+      }
+    }
+    .inline-icon {
+  height: 32px; /* или меньше — например, 24px */
+  width: auto;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+  </style>
 </head>
-Раздел пока не написан<br>
-Вернуться <a href="../">назад</a>.
+<body>
+  <nav class="top-nav">
+    <a href="../" class="back-button">← Вернуться к другому нестихотворному творчеству</a>
+    <img src="../../../sun.png" class="inline-icon">
+    <a href="../sci" class="back-button">Околонаучная деятельность →</a>
+    <div class="right-block">
+      <h2 class="years-header">Стихи прошлых лет</h2>
+      <div class="year-links">
+        <a href="../../2024/">2024</a> |
+        <a href="../../2023/">2023</a> |
+        <a href="../../2022/">2022</a> |
+        <a href="../../2021/">2021</a> |
+        <a href="../../2020/">2020</a> |
+        <a href="../../old/">Ещё раньше</a>
+      </div>
+    </div>
+    
+  </nav>
+
+  <h1>Комбинаторная поэзия</h1>
+   <section>
+    <div class="content-wrapper">
+      
+      <div class="text-block">
+      <h2>РАВНОБУКВИЦЫ (ПАНТОГРАММЫ)</h2>
+        <p>(<i>вместо эпиграфа:<br><br>
+               В том, чтоб писать пантограммы<br>
+               Понта — граммы.<br><br></i>)
+
+          Не тверди, кто виноват, — ору. <br>
+          Нет вердиктов и новатору.<br>
+          * * * * * * * * * * * * *<br>
+          Около ста в небе скрыл, учуяв, то нас сон ансамблей:<br>
+          О, коло! «Став не бескрыл, — учу я, — в тон ассонансам блей!»<br>
+          * * * * * * * * * * * * *<br>
+          Ад неправд — войне. <a href="https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA" target="_blank" rel="noopener noreferrer">Жальник</a>-то вырос, сияя.<br>
+          А Днепра вдвойне жаль. «Никто вы, Россия — я».<br>
+          * * * * * * * * * * * * *<br>
+          ИВМ глупо канет —<br>
+          И в мглу (пока нет).</p>
+
+        <h2>АНАГРАММЫ</h2>
+        <p>
+          Улицы зреют весной, наполняясь ушатом света, радуги и ароматом воли. Я<br>
+          Улицезрею: на поляне снова май, восвояси мы шли туда тротуаром, играя.<br>
+          * * * * * * * * * * * * *<br>
+          постмодерн<br>
+          подсмотрен<br>
+          * * * * * * * * * * * * *<br>
+          небосводы, отступите!<br>
+          несвободы, отпустите!<br>
+          * * * * * * * * * * * * *<br>
+          <b>АНАГРАММА ВАЛЮТООБМЕННИКА</b><br>
+          лира<br>
+          лари<br>
+          риал<br>
+          * * * * * * * * * * * * *<br>
+          ТЕМ, КТО ВНОВЬ (стихотворение-полианаграмма)<br>
+          Аллея славы, будь не слишком распростёрта!<br>
+          Марш — будня вальс, а сер (если пылал костёр-то).<br><br>
+          Не твой нам манифест орали вслух, алея:<br>
+          Нет воинам, Фарвест! Снимай охул, аллея!<br><br>
+          А если мир и май вокруг излишне пресен<br>
+          Шинели — зло, кумир-с, ввергай армии песен!<br><br>
+          Манить иди, жокей! Обучен в шёпот с войском?<br>
+          Так пой же в тишине о чём-нибудь о свойском!</p>
+        </p>
+
+        <h2>ПАЛИНДРОМ ВСЕРОСНИКА</h2>
+        <p>
+          О, видел Казань на закле — диво!<br>
+          (И<br>
+           Уфу)
+        </p>
+
+        <h2>СПОНТАННО ПОРОЖДЁННЫЙ МОНОПАЛИНДРОМ</h2>
+        <p>
+        — Он не вор!<br>
+        — Кто он?<br>
+        — Муза!<br>
+        — Разумно, откровенно. 
+        </p>
+
+        <h2>ПРОСТО СОЗВУЧЬИЦА</h2>
+        <p>
+          Иди! Или я,<br>
+          Или идиллия.<br><br>
+
+          пещерная первобытность,<br>
+          испещрённая первосортностью<br><br>
+
+          <b>ЭНАНТИОСЕМИЯ</b><br>
+          — Тебе от меня уже пришли деньги или прислать?<br>
+          — Пришли.<br><br>
+
+          <b>КРИТИКА ОБНАЖЁННЫХ ФОТОГРАФИЙ</b><br>
+          (<i>кратчайшее предложение, содержащее все слова на «н» из двух букв</i>)<br><br>
+          Но ну ни за что на ню не скажешь «ня»!
+        </p>
+ </div>
+  </section>
+  <section>
+  <section>
+    <h3>Раздел не завершён!</h3>
+  </section>
+  <h3><a href="../">Стихи были лучше!</a></h3>
+</section>
+<footer class="footer">
+  <a href="../../">На главную страницу</a> |
+  <a href="https://t.me/spontaneousbeetgrowingfaculty" rel="noopener noreferrer">в Телеграме</a> |
+  <a href="https://vk.com/spontaneousbeetgrowingfaculty" rel="noopener noreferrer">ВКонтакте</a> 
+</footer>
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">↑</button>
+<script>
+  window.onscroll = function() {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
