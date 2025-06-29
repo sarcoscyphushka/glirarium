@@ -113,24 +113,27 @@
       background-color: #7a0a53;
     }
 
-    .sort-button {
+.sort-button {
   font-size: 16px;
-  background-color: #990D66;
-  color: white;
-  border: none;
+  background-color: transparent; /* убираем заливку */
+  color: #990D66;
+  border: 2px solid #990D66;
   outline: none;
   padding: 10px 14px;
   margin: 0 10px 20px 0;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: none; /* убираем тень */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
   font-family: 'Candara', sans-serif;
   font-weight: bold;
 }
 
 .sort-button:hover {
-  background-color: #7a0a53;
+  text-decoration: underline; /* подчёркивание текста при наведении */
+  background-color: #f9f5f2; /* совпадает с цветом фона, на всякий случай */
+  color: #7a0a53; /* чуть темнее при наведении */
+  border-color: #7a0a53;
 }
 
     /* --- Адаптив --- */
