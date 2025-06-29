@@ -210,9 +210,12 @@
     </div>
   </nav>
 
-  <h1>Новые стихи</h1>
-  
-  <section>
+  <h1>Стихи 2025 года</h1>
+
+<button onclick="sortPoems('newest')">Сначала новые</button>
+<button onclick="sortPoems('oldest')">Сначала старые</button>
+
+<section class="poem" data-date="2025-06-13">
     <div class="content-wrapper">
       
       <div class="text-block">
@@ -275,7 +278,7 @@
       
     </div>
   </section>
-  <section>
+  <section class="poem" data-date="2025-04-27">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -307,7 +310,7 @@
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2025-04-22">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -367,7 +370,7 @@
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2025-04-07">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -395,7 +398,7 @@
       </div>
       <div class="image-block">
   </section>
-<section>
+<section class="poem" data-date="2025-03-30">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -420,7 +423,7 @@
       </div>
       <div class="image-block">
   </section>
-<section>
+<section class="poem" data-date="2025-02-24">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -461,7 +464,7 @@
       </div>
       <div class="image-block">
   </section>
-<section>
+<section class="poem" data-date="2025-02-21">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -492,7 +495,7 @@
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2025-01-14">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -558,6 +561,20 @@
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<script>
+  function sortPoems(order) {
+    const container = document.getElementById("poems-container");
+    const poems = Array.from(container.getElementsByClassName("poem"));
+
+    poems.sort((a, b) => {
+      const dateA = new Date(a.getAttribute("data-date"));
+      const dateB = new Date(b.getAttribute("data-date"));
+      return order === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+
+    poems.forEach(poem => container.appendChild(poem)); // Переставляем
   }
 </script>
 </body>
