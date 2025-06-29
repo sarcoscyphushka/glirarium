@@ -21,6 +21,30 @@
       margin: 10px 0;
     }
 
+ .poems-layout-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+#poems-container {
+  flex: 1 1 auto;
+}
+
+.image-block {
+  flex: 0 0 400px;
+  max-width: 400px;
+}
+
+.image-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+    
     .back-button {
       display: inline-block;
       margin-bottom: 15px;
@@ -47,18 +71,6 @@
 
     .text-block {
       flex: 1 1 auto;
-    }
-
-    .image-block {
-      flex: 0 0 400px; /* фиксированная ширина картинки на десктопе */
-      max-width: 400px;
-    }
-
-    .image-block img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
     
     .footer {
@@ -100,6 +112,30 @@
 #scrollTopBtn:hover {
   background-color: #7a0a53;
 }
+
+.sort-button {
+  font-size: 16px;
+  background-color: transparent; /* убираем заливку */
+  color: #990D66;
+  border: 2px solid #990D66;
+  outline: none;
+  padding: 10px 14px;
+  margin: 0 10px 20px 0;
+  border-radius: 8px;
+  box-shadow: none; /* убираем тень */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Candara', sans-serif;
+  font-weight: bold;
+}
+
+.sort-button:hover {
+  text-decoration: underline; /* подчёркивание текста при наведении */
+  background-color: #f9f5f2; /* совпадает с цветом фона, на всякий случай */
+  color: #7a0a53; /* чуть темнее при наведении */
+  border-color: #7a0a53;
+}
+    
    @media (max-width: 768px) {
       .content-wrapper {
         flex-direction: column;
@@ -222,8 +258,14 @@ html {
   .year-links {
     white-space: normal;
   }
-}
+@media (max-width: 500px) {
+  .sort-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
+}
+    }
 }
   </style>
 </head>
@@ -244,8 +286,12 @@ html {
   </div>
 </nav>
   <h1>Стихи 2023 года</h1>
+<button class="sort-button" onclick="sortPoems('newest')">Сначала новые</button>
+<button class="sort-button" onclick="sortPoems('oldest')">Сначала старые</button>
 
- <section>
+<div class="poems-layout-wrapper">
+<div id="poems-container">
+ <section class="poem" data-date="2023-12-17">
     <div class="content-wrapper">      
       <div class="text-block">
         <h2>2023</h2>
@@ -282,7 +328,7 @@ html {
     </div>
   </section>
   
- <section>
+ <section class="poem" data-date="2023-11-10">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -322,7 +368,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-10-18">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -350,7 +396,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-09-23">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -381,7 +427,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-09-14">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -452,7 +498,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-08-18">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -477,7 +523,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-07-14">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -502,7 +548,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-04-30">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -551,7 +597,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-04-15">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -633,7 +679,7 @@ html {
 <i>15 апреля 2023</i></p>
  </div>
   </section>
-  <section>
+  <section class="poem" data-date="2023-04-13">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -674,7 +720,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-03-14">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -747,7 +793,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-03-08">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -798,7 +844,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-02-28">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -819,7 +865,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2023-01-14">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -860,17 +906,26 @@ html {
       </div>
       <div class="image-block">
   </section>
+      </div>
+<div class="image-block">
+<img src="../rylo.png">
+</div>
+</div>    
+<div class="extra-links">
 <section>
   <h3><a href="../2024/">К более новым стихам</a></h3>
 </section>
 <section>
   <h3><a href="../nonpoetry/">Нестихотворные формы</a></h3>
-</section>        
+</section>   
+</div>
+    
 <footer class="footer">
   <a href="../../">На главную страницу</a> |
   <a href="https://t.me/spontaneousbeetgrowingfaculty" rel="noopener noreferrer">в Телеграме</a> |
-  <a href="https://vk.com/spontaneousbeetgrowingfaculty" rel="noopener noreferrer">ВКонтакте</a> |
+  <a href="https://vk.com/spontaneousbeetgrowingfaculty" rel="noopener noreferrer">ВКонтакте</a> 
 </footer>
+
 <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">↑</button>
 <script>
   window.onscroll = function() {
@@ -884,6 +939,20 @@ html {
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<script>
+  function sortPoems(order) {
+    const container = document.getElementById("poems-container");
+    const poems = Array.from(container.getElementsByClassName("poem"));
+
+    poems.sort((a, b) => {
+      const dateA = new Date(a.getAttribute("data-date"));
+      const dateB = new Date(b.getAttribute("data-date"));
+      return order === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+
+    poems.forEach(poem => container.appendChild(poem)); // Переставляем
   }
 </script>
 </body>
