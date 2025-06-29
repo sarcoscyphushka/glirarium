@@ -21,6 +21,29 @@
       margin: 10px 0;
     }
 
+.poems-layout-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+#poems-container {
+  flex: 1 1 auto;
+}
+
+.image-block {
+  flex: 0 0 400px;
+  max-width: 400px;
+}
+
+.image-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
     .back-button {
       display: inline-block;
       margin-bottom: 15px;
@@ -47,18 +70,6 @@
 
     .text-block {
       flex: 1 1 auto;
-    }
-
-    .image-block {
-      flex: 0 0 400px; /* фиксированная ширина картинки на десктопе */
-      max-width: 400px;
-    }
-
-    .image-block img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
 
     .footer {
@@ -101,6 +112,26 @@
     #scrollTopBtn:hover {
       background-color: #7a0a53;
     }
+
+    .sort-button {
+  font-size: 16px;
+  background-color: #990D66;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  margin: 0 10px 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Candara', sans-serif;
+  font-weight: bold;
+}
+
+.sort-button:hover {
+  background-color: #7a0a53;
+}
 
     /* --- Адаптив --- */
     @media (max-width: 768px) {
@@ -191,6 +222,13 @@
       .year-links {
         white-space: normal;
       }
+  @media (max-width: 500px) {
+  .sort-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
     }
   </style>
 </head>
@@ -212,9 +250,10 @@
 
   <h1>Стихи 2025 года</h1>
 
-<button onclick="sortPoems('newest')">Сначала новые</button>
-<button onclick="sortPoems('oldest')">Сначала старые</button>
+<button class="sort-button" onclick="sortPoems('newest')">Сначала новые</button>
+<button class="sort-button" onclick="sortPoems('oldest')">Сначала старые</button>
 
+<div class="poems-layout-wrapper">
 <div id="poems-container">
   <section class="poem" data-date="2025-06-13">
     <div class="content-wrapper">
@@ -272,11 +311,7 @@
         </p>
         <img src="svobodnyj.jpg" width="350">
       </div>
-
-      <div class="image-block">
-        <img src="rylo.png">
-      </div>
-      
+   
     </div>
   </section>
   <section class="poem" data-date="2025-04-27">
@@ -538,6 +573,9 @@
       </div>
       <div class="image-block">
   </section>
+</div>
+<div class="image-block">
+ <img src="rylo.png">
 </div>
 <section>
   <h3><a href="2024/">К прошлогодним стихам</a></h3>
