@@ -21,6 +21,29 @@
       margin: 10px 0;
     }
 
+    .poems-layout-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+#poems-container {
+  flex: 1 1 auto;
+}
+
+.image-block {
+  flex: 0 0 400px;
+  max-width: 400px;
+}
+
+.image-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
     .back-button {
       display: inline-block;
       margin-bottom: 15px;
@@ -47,18 +70,6 @@
 
     .text-block {
       flex: 1 1 auto;
-    }
-
-    .image-block {
-      flex: 0 0 400px; /* фиксированная ширина картинки на десктопе */
-      max-width: 400px;
-    }
-
-    .image-block img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
     
     .footer {
@@ -100,6 +111,30 @@
 #scrollTopBtn:hover {
   background-color: #7a0a53;
 }
+
+.sort-button {
+  font-size: 16px;
+  background-color: transparent; /* убираем заливку */
+  color: #990D66;
+  border: 2px solid #990D66;
+  outline: none;
+  padding: 10px 14px;
+  margin: 0 10px 20px 0;
+  border-radius: 8px;
+  box-shadow: none; /* убираем тень */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Candara', sans-serif;
+  font-weight: bold;
+}
+
+.sort-button:hover {
+  text-decoration: underline; /* подчёркивание текста при наведении */
+  background-color: #f9f5f2; /* совпадает с цветом фона, на всякий случай */
+  color: #7a0a53; /* чуть темнее при наведении */
+  border-color: #7a0a53;
+}
+    
    @media (max-width: 768px) {
       .content-wrapper {
         flex-direction: column;
@@ -208,8 +243,14 @@ html {
   .year-links {
     white-space: normal;
   }
-}
+ @media (max-width: 500px) {
+  .sort-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
+}
+    }
 }
   </style>
 </head>
@@ -229,7 +270,12 @@ html {
   </div>
 </nav>
   <h1>Стихи 2024 года</h1>
- <section>
+<button class="sort-button" onclick="sortPoems('newest')">Сначала новые</button>
+<button class="sort-button" onclick="sortPoems('oldest')">Сначала старые</button>
+
+<div class="poems-layout-wrapper">
+<div id="poems-container">
+ <section class="poem" data-date="2024-12-11">
     <div class="content-wrapper">      
       <div class="text-block">
         <h2>МЫ И ВЫ</h2>
@@ -256,15 +302,10 @@ html {
 <i>11 декабря 2024</i></p>
 <img src="my_i_vy.jpg" width="350">
       </div>
-
- <div class="image-block">
-        <img src="../rylo.png">
-      </div>
-      
     </div>
   </section>
   
- <section>
+ <section class="poem" data-date="2024-10-27">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -335,7 +376,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-10-09">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -366,7 +407,7 @@ html {
       </p>
       </div>
   </section>
-  <section>
+  <section class="poem" data-date="2024-10-05">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -391,7 +432,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-09-24">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -429,7 +470,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-07-25">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -483,7 +524,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-07-14">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -522,7 +563,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-05-04">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -575,7 +616,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-04-28">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -609,7 +650,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-04-16">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -641,7 +682,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-04-15">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -670,7 +711,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-04-10">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -702,7 +743,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-02-20">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -739,7 +780,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-02-04">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -771,7 +812,7 @@ html {
       </div>
       <div class="image-block">
   </section>
-  <section>
+  <section class="poem" data-date="2024-01-08">
     <div class="content-wrapper">
       
     <div class="text-block">
@@ -801,13 +842,21 @@ html {
    <img src="too.jpg" width="350">
       </div>
  <div class="image-block">
-  </section>       
+  </section>
+ </div>
+<div class="image-block">
+ <img src="rylo.png">
+</div>
+</div>
+<div class="extra-links">
 <section>
   <h3><a href="../2023/">К прошлогодним стихам</a></h3>
 </section>
 <section>
   <h3><a href="../nonpoetry/">Нестихотворные формы</a></h3>
-</section>        
+</section>    
+</div>
+    
 <footer class="footer">
   <a href="../../">На главную страницу</a> |
   <a href="https://t.me/spontaneousbeetgrowingfaculty" rel="noopener noreferrer">в Телеграме</a> |
@@ -826,6 +875,20 @@ html {
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<script>
+  function sortPoems(order) {
+    const container = document.getElementById("poems-container");
+    const poems = Array.from(container.getElementsByClassName("poem"));
+
+    poems.sort((a, b) => {
+      const dateA = new Date(a.getAttribute("data-date"));
+      const dateB = new Date(b.getAttribute("data-date"));
+      return order === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+
+    poems.forEach(poem => container.appendChild(poem)); // Переставляем
   }
 </script>
 </body>
