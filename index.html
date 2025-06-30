@@ -99,6 +99,13 @@
 
 #right-drawer li {
   margin: 12px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+#right-drawer li:hover {
+  background-color: #ecdfe7; 
 }
 
 #right-drawer a {
@@ -172,6 +179,7 @@
   <div class="license-note">
     Все материалы, размещённые на этом сайте, являются общественным достоянием. Разрешается использование материалов в любых целях.
   </div>
+  
   <script>
   const handle = document.getElementById("drawer-handle");
   const drawer = document.getElementById("right-drawer");
@@ -186,6 +194,17 @@
     drawer.classList.remove("open");
     handle.style.display = "flex"; // Покажем ручку снова
   });
+
+   document.addEventListener("click", (e) => {
+    const isClickInsideDrawer = drawer.contains(e.target);
+    const isClickOnHandle = handle.contains(e.target);
+
+    if (!isClickInsideDrawer && !isClickOnHandle) {
+      drawer.classList.remove("open");
+      handle.style.display = "flex";
+    }
+  });
+    
 </script>
   </body>
 <style>
