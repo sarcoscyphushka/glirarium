@@ -36,6 +36,81 @@
   margin-top: 20px;
   margin-bottom: 40px;
 }
+
+#drawer-handle {
+  position: fixed;
+  top: 40%;
+  right: 0;
+  width: 40px;
+  height: 80px;
+  background-color: #990D66;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px 0 0 8px;
+  z-index: 1001;
+  box-shadow: -2px 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+}
+
+#drawer-handle:hover {
+  background-color: #7a0a53;
+}
+
+/* Сама панель */
+#right-drawer {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 100%;
+  background-color: #f9f5f2;
+  border-left: 2px solid #990D66;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+/* Открытое состояние */
+#right-drawer.open {
+  right: 0;
+}
+
+/* Кнопка закрытия */
+#close-drawer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #990D66;
+  cursor: pointer;
+}
+
+#right-drawer ul {
+  list-style: none;
+  padding: 0;
+}
+
+#right-drawer li {
+  margin: 12px 0;
+}
+
+#right-drawer a {
+  color: #990D66;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#right-drawer a:hover {
+  text-decoration: underline;
+}
+    
   </style>
 </head>
 <body>
@@ -57,6 +132,30 @@
   <section>
     <br>
     Давайте не теряться!</section>
+
+<div id="drawer-handle" title="Меню">←</div>
+
+<div id="right-drawer">
+  <button id="close-drawer">→</button>
+  <h2>Список страниц сайта</h2>
+  <ul>
+    <li><a href="centre/">Об этом сайте</a></li>
+    <li><a href="forum/">Форум для предложений</a></li>
+    <li><a href="beetgrowing/">Мои новые стихотворения</a></li>
+    <li><a href="beetgrowing/2024/">Мои стихотворения (2024)</a></li>
+    <li><a href="beetgrowing/2023/">Мои стихотворения (2023)</a></li>
+    <li><a href="beetgrowing/2022/">Мои стихотворения (2022)</a></li>
+    <li><a href="beetgrowing/2021/">Мои стихотворения (2021)</a></li>
+    li><a href="beetgrowing/2020/">Мои стихотворения (2020)</a></li>
+    li><a href="beetgrowing/old/">Мои старые стихотворения</a></li>
+    <li><a href="beetgrowing/nonpoetry/">Нестихотворное творчество</a></li>
+    <li><a href="beetgrowing/nonpoetry/comb/">Комбинаторная поэзия</a></li>
+    <li><a href="beetgrowing/nonpoetry/sci/">«Академические» тексты</a></li>
+    <li><a href="nikchom/">Просветительская деятельность</a></li>
+    <li><a href="articles/">Заметки, наблюдения, размышления</a></li>
+    <li><a href="Sonja/">Информация обо мне</a></li>
+  </ul>
+</div>
      
 <div style="margin-top: 40px;">
   <a href="forum/" class="section-button" style="background-color:#990D66; display:inline-block; padding:14px 22px; border-radius:8px; font-weight:bold; color:white; text-decoration:none; box-shadow:0 3px 6px rgba(0,0,0,0.2);">
@@ -73,6 +172,21 @@
   <div class="license-note">
     Все материалы, размещённые на этом сайте, являются общественным достоянием. Разрешается использование материалов в любых целях.
   </div>
+  <script>
+  const handle = document.getElementById("drawer-handle");
+  const drawer = document.getElementById("right-drawer");
+  const closeBtn = document.getElementById("close-drawer");
+
+  handle.addEventListener("click", () => {
+    drawer.classList.add("open");
+    handle.style.display = "none"; // Спрячем ручку
+  });
+
+  closeBtn.addEventListener("click", () => {
+    drawer.classList.remove("open");
+    handle.style.display = "flex"; // Покажем ручку снова
+  });
+</script>
   </body>
 <style>
 .background-image {
