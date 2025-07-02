@@ -219,7 +219,10 @@ body {
 #thvety {
   bottom: 0 px;
   
-
+.hidden-floating {
+  display: none !important;
+}
+  
 @media (max-width: 600px) {
   #right-drawer {
     width: 85vw;          /* 85% ширины окна */
@@ -236,11 +239,12 @@ body {
   
 <body>
 <div><img src="zagolovok.png" alt="Заголовок" style="width: 90%; margin: 0 auto; display: block;"></div>
+<img src="skucno.png" alt="Кнопка скуки" id="toggleImagesBtn" style="position: fixed; bottom: 100px; right: 20px; width: 40px; height: 40px; cursor: pointer; z-index: 2000;">
 <img src="sun2.png" alt="" id="sun" class="floating-image">
 <img src="cloud.png" alt="" id="cloud" class="floating-image">
 <img src="cloud2.png" alt="" id="cloud2" class="floating-image">
 <img src="cloud3.png" alt="" id="cloud3" class="floating-image">
-<img src="niz.png" alt="" id="thvety" class="floating-image-two">
+<img src="niz.png" alt="" id="thvety" class="floating-image-two"
   
 <div class="main-content">
   <section>
@@ -357,6 +361,23 @@ imagesTwo.forEach(img => {
     }, 25000);
   });
 });
+</script>
+
+<script>
+  const toggleBtn = document.getElementById("toggleImagesBtn");
+  let imagesVisible = true;
+
+  toggleBtn.addEventListener("click", () => {
+    const floatingImages = document.querySelectorAll('.floating-image, .floating-image-two');
+
+    floatingImages.forEach(img => {
+      img.classList.toggle("hidden-floating");
+    });
+
+    imagesVisible = !imagesVisible;
+
+    toggleBtn.src = imagesVisible ? "skucno.png" : "veselo.png";
+  });
 </script>
   
   </body>
