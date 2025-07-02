@@ -445,6 +445,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const sun = document.getElementById('sun');
+  const centerX = window.innerWidth / 2; // центр по ширине экрана
+  const centerY = window.innerHeight + 100; // центр «ниже» экрана, чтобы была полудуга
+  const radius = 300; // радиус дуги
+  let angle = 0; // угол в градусах
+
+  function animate() {
+    angle += 0.05; // очень медленно (регулируй)
+
+    if (angle > 180) angle = 0; // полудуга: от 0 до 180 градусов
+
+    // переводим угол в радианы
+    const rad = angle * Math.PI / 180;
+
+    // считаем координаты по кругу (снизу вверх по дуге)
+    const x = centerX + radius * Math.cos(rad) - sun.offsetWidth / 2;
+    const y = centerY - radius * Math.sin(rad) - sun.offsetHeight / 2;
+
+    sun.style.left = `${x}px`;
+    sun.style.top = `${y}px`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+</script>  
   
   </body>
 <style>
