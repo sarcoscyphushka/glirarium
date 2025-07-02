@@ -148,6 +148,16 @@
   background-color: #990D66;
 }   
 
+.floating-image {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px; /* размер можно подогнать под вкус */
+  height: auto;
+  z-index: 999; /* чтобы была поверх всего */
+  cursor: pointer;
+}    
+
 @media (max-width: 600px) {
   #right-drawer {
     width: 85vw;          /* 85% ширины окна */
@@ -162,6 +172,9 @@
   </style>
 </head>
 <body>
+
+<img src="sun2.png" alt="" id="floatingImage" class="floating-image">
+  
   <div class="background-image"></div>
    <div class="main-content">
   <h1>Вся Соня в одном месте на случай второго пришествия или всемирного потопа</h1>
@@ -251,6 +264,19 @@
   });
     
 </script>
+
+ <script>
+   const img = document.getElementById('floatingImage');
+
+img.addEventListener('click', () => {
+  img.style.display = 'none'; // Скрываем картинку
+
+  setTimeout(() => {
+    img.style.display = 'block'; // Через 5 секунд показываем обратно
+  }, 15000); // 5000 миллисекунд = 5 секунд
+});
+ </script>
+  
   </body>
 <style>
 .background-image {
