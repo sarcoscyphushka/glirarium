@@ -366,13 +366,15 @@ body::before {
 const images = document.querySelectorAll('.floating-image');
 
 images.forEach(img => {
-  img.addEventListener('click', () => {
-    img.style.display = 'none'; // скрыть картинку
+  if (img.id !== "cloud") { 
+    img.addEventListener('click', () => {
+      img.style.display = 'none';
 
-    setTimeout(() => {
-      img.style.display = 'block'; // показать снова через 5 сек
-    }, 20000);
-  });
+      setTimeout(() => {
+        img.style.display = 'block';
+      }, 20000);
+    });
+  }
 });
 </script>
   
