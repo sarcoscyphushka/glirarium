@@ -311,9 +311,8 @@ body {
     
 </script>
 
- <script>
-const images = document.querySelectorAll('.floating-image-two');
-const imagesTwo = document.querySelectorAll('.floating-image-two');
+<script>
+const images = document.querySelectorAll('.floating-image');
 
 images.forEach(img => {
   img.addEventListener('click', () => {
@@ -324,7 +323,11 @@ images.forEach(img => {
     }, 20000);
   });
 });
-
+</script>
+  
+<script>
+const imagesTwo = document.querySelectorAll('.floating-image-two');
+   
 imagesTwo.forEach(img => {
   img.addEventListener('click', () => {
     img.style.display = 'none'; // скрыть картинку
@@ -334,8 +337,7 @@ imagesTwo.forEach(img => {
     }, 25000);
   });
 });
-   
- </script>
+</script>
   
   </body>
 <style>
