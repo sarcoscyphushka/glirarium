@@ -257,8 +257,23 @@ body::before {
   }
 }
 
+@keyframes flyIn {
+  0% {
+    transform: translateX(-120vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .fly-out {
   animation: flyLeft 4s ease-out forwards;
+}
+
+.fly-in {
+  animation: flyIn 4s ease-in forwards;
 }
  
   </style>
@@ -410,14 +425,24 @@ imagesTwo.forEach(img => {
 </script>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
   const cloudImage = document.getElementById('cloud');
+  let isFlyingOut = false;
 
-cloudImage.addEventListener('click', () => {
-  cloudImage.classList.add("fly-out");
+  cloudImage.addEventListener('click', () => {
+    if (!isFlyingOut) {
+      cloudImage.classList.remove('fly-in');
+      cloudImage.classList.add('fly-out');
+      isFlyingOut = true;
 
-  setTimeout(() => {
-    cloudImage.classList.remove("fly-out");
-  }, 20000);
+      // через 20 секунд вернуть обратно с анимацией
+      setTimeout(() => {
+        cloudImage.classList.remove('fly-out');
+        cloudImage.classList.add('fly-in');
+        isFlyingOut = false;
+      }, 20000);
+    }
+  });
 });
 </script>
   
