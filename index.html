@@ -10,7 +10,7 @@
 body {
   background: linear-gradient(to bottom, rgba(135, 206, 235, 0.4), rgba(255, 255, 255, 0.7));
   font-family: 'Candara', sans-serif;
-  color: #990D66;
+  color: #0000FF;
   padding: 20px;
 }
     
@@ -24,7 +24,7 @@ body {
 }
 
 .footer a {
-  color: #990D66;
+  color: #0000FF;
   text-decoration: none;
   margin: 0 10px;
 }
@@ -158,6 +158,16 @@ body {
   height: 100px;
   z-index: 999; /* чтобы была поверх всего */
   cursor: pointer;
+}  
+
+.floating-image-two {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw; /* 100% ширины экрана */
+  height: auto;
+  z-index: 999; /* чтобы была поверх всего */
+  cursor: pointer;
 }    
 
 .soft-fade-image {
@@ -186,7 +196,11 @@ body {
 #cloud3 {
   top: 450px;
   right: 600px;
-}        
+}     
+
+#thvety {
+  bottom: 0 px;
+  
 
 @media (max-width: 600px) {
   #right-drawer {
@@ -207,6 +221,7 @@ body {
 <img src="cloud.png" alt="" id="cloud" class="floating-image">
 <img src="cloud2.png" alt="" id="cloud2" class="floating-image">
 <img src="cloud3.png" alt="" id="cloud3" class="floating-image">
+<img src="niz.png" alt="" id="thvety" class="floating-image-two">
   
 <div class="main-content">
   <section>
@@ -254,7 +269,7 @@ body {
 </div>
   
 <div style="margin-top: 40px;">
-  <a href="forum/" class="section-button" style="background-color:#990D66; display:inline-block; padding:14px 22px; border-radius:8px; font-weight:bold; color:white; text-decoration:none; box-shadow:0 3px 6px rgba(0,0,0,0.2);">
+  <a href="forum/" class="section-button" style="background-color:##0000FF; display:inline-block; padding:14px 22px; border-radius:8px; font-weight:bold; color:white; text-decoration:none; box-shadow:0 3px 6px rgba(0,0,0,0.2);">
     У меня есть предложение для сайта! →
   </a>
 </div>
@@ -297,7 +312,8 @@ body {
 </script>
 
  <script>
-const images = document.querySelectorAll('.floating-image');
+const images = document.querySelectorAll('.floating-image-two');
+const imagesTwo = document.querySelectorAll('.floating-image-two');
 
 images.forEach(img => {
   img.addEventListener('click', () => {
@@ -308,6 +324,17 @@ images.forEach(img => {
     }, 20000);
   });
 });
+
+imagesTwo.forEach(img => {
+  img.addEventListener('click', () => {
+    img.style.display = 'none'; // скрыть картинку
+
+    setTimeout(() => {
+      img.style.display = 'block'; // показать снова через 5 сек
+    }, 25000);
+  });
+});
+   
  </script>
   
   </body>
