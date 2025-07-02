@@ -170,6 +170,20 @@ body {
   cursor: pointer;
 }    
 
+.avatar-with-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-caption {
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #990D66;
+  text-align: center;
+  font-weight: bold;
+}    
+
 .soft-fade-image {
   width: 250px; 
   height: auto;
@@ -220,6 +234,7 @@ body {
     
   </style>
 </head>
+  
 <body>
 <div><img src="zagolovok.png" alt="Заголовок" style="width: 90%; margin: 0 auto; display: block;"></div>
 <img src="sun2.png" alt="" id="sun" class="floating-image">
@@ -231,15 +246,17 @@ body {
 <div class="main-content">
   <section>
     <br>
-  <div style="display: flex; align-items: flex-start; gap: 20px;">
+  <div class="avatar-with-caption">
     <img src="avatarka_rounded.png" alt="Соня" class="soft-fade-image">
-    <div>
+    <p class="avatar-caption">Давайте не теряться!</p>
+  </div>
+  <div>
       <h2>Путём интроспекции я осознал(-а), что хочу...</h2>
       <p><a href="centre/">оказаться в геометрическом центре Вселенной</a></p>
       <p><a href="beetgrowing/">приобщиться к высокой культуре</a></p>
       <p><a href="articles/">узнать своё мнение по какому-то вопросу</a></p>
       <p><a href="Sonja/">просто познакомиться</a></p>
-    </div>
+  </div>
   </div>
     </section>
   <section>
