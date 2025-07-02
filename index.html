@@ -6,11 +6,15 @@
   <link rel="icon" type="image/png" href="favicon.png">
   
   <style>
-    body {
-      font-family: 'Candara', sans-serif;
-      color: #990D66;
-    }
-    .footer {
+
+body {
+  background: linear-gradient(to bottom, rgba(135, 206, 235, 0.4), rgba(255, 255, 255, 0.7));
+  font-family: 'Candara', sans-serif;
+  color: #990D66;
+  padding: 20px;
+}
+    
+.footer {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid #ccc;
@@ -190,15 +194,13 @@
   </style>
 </head>
 <body>
-
+<div><img src="zagolovok.png" alt="Заголовок" style="width: 90%; margin: 0 auto; display: block;"></div>
 <img src="sun2.png" alt="" id="sun" class="floating-image">
 <img src="cloud.png" alt="" id="cloud" class="floating-image">
 <img src="cloud2.png" alt="" id="cloud2" class="floating-image">
 <img src="cloud3.png" alt="" id="cloud3" class="floating-image">
   
-  <div class="background-image"></div>
-   <div class="main-content">
-  <h1>Вся Соня в одном месте на случай второго пришествия или всемирного потопа</h1>
+<div class="main-content">
   <section>
   <div style="display: flex; align-items: flex-start; gap: 20px;">
     <img src="avatarka.jpg" width="400" alt="Соня">
@@ -302,16 +304,6 @@ images.forEach(img => {
   
   </body>
 <style>
-.background-image {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("Aktau.jpg") center/cover no-repeat;
-  opacity: 0.2; 
-  z-index: -1;
-}
-
 .main-content {
   position: relative;
   z-index: 1;
