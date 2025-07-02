@@ -152,11 +152,31 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  width: 100px; /* размер можно подогнать под вкус */
-  height: auto;
+  width: auto; /* размер можно подогнать под вкус */
+  height: 200px;
   z-index: 999; /* чтобы была поверх всего */
   cursor: pointer;
 }    
+
+#sun {
+  top: 20px;
+  right: 30px;
+}
+
+#cloud {
+  top: 150px;
+  right: 400px;
+}
+
+#cloud2 {
+  top: 550px;
+  right: 200px;
+} 
+
+#cloud3 {
+  top: 850px;
+  right: 600px;
+}        
 
 @media (max-width: 600px) {
   #right-drawer {
@@ -173,7 +193,10 @@
 </head>
 <body>
 
-<img src="sun2.png" alt="" id="floatingImage" class="floating-image">
+<img src="sun2.png" alt="" id="sun" class="floating-image">
+<img src="cloud.png" alt="" id="cloud" class="floating-image">
+<img src="cloud2.png" alt="" id="cloud2" class="floating-image">
+<img src="cloud3.png" alt="" id="cloud3" class="floating-image">
   
   <div class="background-image"></div>
    <div class="main-content">
@@ -266,14 +289,16 @@
 </script>
 
  <script>
-   const img = document.getElementById('floatingImage');
+const images = document.querySelectorAll('.floating-image');
 
-img.addEventListener('click', () => {
-  img.style.display = 'none'; // Скрываем картинку
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    img.style.display = 'none'; // скрыть картинку
 
-  setTimeout(() => {
-    img.style.display = 'block'; // Через 5 секунд показываем обратно
-  }, 15000); // 5000 миллисекунд = 5 секунд
+    setTimeout(() => {
+      img.style.display = 'block'; // показать снова через 5 сек
+    }, 20000);
+  });
 });
  </script>
   
