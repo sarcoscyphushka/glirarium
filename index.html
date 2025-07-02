@@ -278,11 +278,33 @@ body::before {
 .fly-in {
   animation: flyIn 4s ease-in forwards;
 }
- 
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.footer, .license-note {
+  flex-shrink: 0;
+}
+    
   </style>
 </head>
   
 <body>
+
+<div class="page-wrapper">
+  
 <div><img src="zagolovok.png" alt="Заголовок" style="width: 90%; margin: 0 auto; display: block;"></div>
 <img src="skucno.png" alt="Кнопка скуки" id="toggleImagesBtn" style="position: fixed; bottom: 100px; right: 20px; width: auto; height: 100px; cursor: pointer; z-index: 1200;">
 <img src="sun2.png" alt="" id="sun" class="floating-image">
@@ -341,6 +363,7 @@ body::before {
   <a href="forum/" class="section-button" style="background-color:#3366ff; display:inline-block; padding:14px 22px; border-radius:8px; font-weight:bold; color:white; text-decoration:none; box-shadow:0 3px 6px rgba(0,0,0,0.2);">
     У меня есть предложение для сайта! →
   </a>
+</div>
 </div>
 <footer class="footer">
   <a href="https://t.me/sarcoscyphushka" rel="noopener noreferrer">Соня в Телеграме</a> |
