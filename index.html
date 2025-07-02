@@ -379,6 +379,18 @@ imagesTwo.forEach(img => {
     toggleBtn.src = imagesVisible ? "skucno.png" : "veselo.png";
   });
 </script>
+
+<script>
+  const cloudImage = document.getElementById('cloud');
+
+cloudImage.addEventListener('click', () => {
+  cloudImage.classList.add("fly-out");
+
+  setTimeout(() => {
+    cloudImage.classList.remove("fly-out");
+  }, 20000);
+});
+</script>
   
   </body>
 <style>
