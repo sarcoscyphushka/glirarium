@@ -171,12 +171,16 @@ body {
 }    
 
 .soft-fade-image {
-  display: block;
-  width: 400px; 
+  width: 250px; 
   height: auto;
-  margin: 20px auto;
-  mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  margin-left: 30px;
+  mask-image: radial-gradient(circle, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  display: block;
 }
 
 #sun {
@@ -228,7 +232,7 @@ body {
   <section>
     <br>
   <div style="display: flex; align-items: flex-start; gap: 20px;">
-    <img src="avatarka_rounded.png" width="400" alt="Соня" class="soft-fade-image">
+    <img src="avatarka_rounded.png" alt="Соня" class="soft-fade-image">
     <div>
       <h2>Путём интроспекции я осознал(-а), что хочу...</h2>
       <p><a href="centre/">оказаться в геометрическом центре Вселенной</a></p>
