@@ -8,14 +8,26 @@
   <title>Зачем я здесь?</title>
   <link rel="icon" type="image/png" href="../favicon.png">
   <style>
+    
     body {
       font-family: 'Candara', sans-serif;
-      color: #990D66;
+      color: #3366ff;
+      padding: 20px;
       max-width: 90%;
-      margin: 10px auto;
       padding: 10px;
-      background: #f9f5f2;
+      background: transparent;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(135, 206, 235, 0.4), rgba(255, 255, 255, 0.7));
+      z-index: -2;
+     }
 
     img {
       max-width: 100%;
@@ -24,9 +36,13 @@
       margin: 10px 0;
     }
 
+    .hidden-floating {
+      display: none !important;
+    }   
+
      details {
-    background-color: #fff0f5;
-    border: 1px solid #990D66;
+    background-color: #CCCCFF;
+    border: 1px solid #0000FF;
     border-radius: 8px;
     padding: 10px;
     margin: 20px 0;
@@ -35,14 +51,102 @@
   summary {
     font-weight: bold;
     cursor: pointer;
-    color: #990D66;
+    color: #FF0000;
     }
+
+.floating-image {
+  position: fixed;
+  width: auto; /* размер можно подогнать под вкус */
+  height: 100px;
+  z-index: 999; /* чтобы была поверх всего */
+  cursor: pointer;
+}  
+
+.floating-image-two {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw; /* 100% ширины экрана */
+  height: auto;
+  z-index: 999; /* чтобы была поверх всего */
+  cursor: pointer;
+}    
+
+#sun {
+  top: 20px;
+  right: 30px;
+}
+
+#cloud {
+  top: 105px;
+  left: 45px;
+}
+
+#cloud2 {
+  top: 250px;
+  right: 200px;
+} 
+
+#cloud3 {
+  top: 270px;
+  right: 600px;
+}     
+
+#thvety {
+  bottom: 0px;
+}  
+
+@media (max-width: 600px) {
+  #right-drawer {
+    width: 85vw;          /* 85% ширины окна */
+    right: -85vw;         /* Прячем на ту же ширину */
+  }
+
+  #right-drawer.open {
+    right: 0;
+  }
+}
+
+ @keyframes flyLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120vw);
+    opacity: 0;
+  }
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translateX(-120vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fly-out {
+  animation: flyLeft 4s ease-out forwards;
+}
+
+.fly-in {
+  animation: flyIn 4s ease-in forwards;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
     .back-button {
       display: inline-block;
       margin-bottom: 15px;
       padding: 8px 16px;
-      background-color: #990D66;
+      background-color: #CCFFCC;
       color: white;
       text-decoration: none;
       border-radius: 6px;
@@ -52,7 +156,8 @@
     }
 
     .back-button:hover {
-      background-color: #7a0a53;
+      background-color: #FFE0B3;
+      text-decoration: underline;
     }
 
     .content-wrapper {
@@ -75,17 +180,18 @@
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     }
+    
     .footer {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid #ccc;
   text-align: center;
   font-size: 0.9em;
-  color: #555;
+  color: #8000FF;
 }
 
 .footer a {
-  color: #990D66;
+  color: #8000FF;
   text-decoration: none;
   margin: 0 10px;
 }
@@ -96,10 +202,11 @@
 .feedback-form {
     margin-top: 50px;
     padding: 20px;
-    background: #f0e6ea;
+    background: #FFE0B3;
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
+    color: #CC6600;
   }
 
   .feedback-form input,
@@ -114,7 +221,7 @@
   }
 
   .feedback-form button {
-    background-color: #990D66;
+    background-color: #CC6600;
     color: white;
     padding: 10px 16px;
     border: none;
@@ -124,22 +231,30 @@
   }
 
   .feedback-form button:hover {
-    background-color: #7a0a53;
+    background-color: #FF0000;
+    text-decoration: underline;
   }
   </style>
 </head>
 <body>
   <a href="../" class="back-button">← Вернуться к истокам</a>
-  <h1>Зачем я здесь?</h1>
 
+<div><img src="centre_zagolovok.png" alt="Заголовок" style="width: 60%; margin: 0 auto; display: block;"></div>
+<img src="../skucno.png" alt="Кнопка скуки" id="toggleImagesBtn" style="position: fixed; bottom: 100px; right: 20px; width: auto; height: 100px; cursor: pointer; z-index: 1200;">
+<img src="../sun2.png" alt="" id="sun" class="floating-image">
+<img src="../cloud.png" alt="" id="cloud" class="floating-image">
+<img src="../cloud2.png" alt="" id="cloud2" class="floating-image">
+<img src="../cloud3.png" alt="" id="cloud3" class="floating-image">
+<img src="../niz.png" alt="" id="thvety" class="floating-image-two">
+  
   <section>
     <div class="content-wrapper">
       
       <div class="text-block">
   <h1>На дворе 2025 год.</h1>
-  <p>Я чувствую себя уязвимой. И речь не о моей тушке, а о тех килотоннах текста, которые я успела произвести за более безопасные годы.<br>
+  <p>Я чувствую себя уязвимой. И дело даже не в моей тушке, а в тех килотоннах текста, которые я успела произвести за более безопасные годы.<br>
   Постепенно блокируются все известные вам сайты. Скорее всего, рано или поздно мои каналы и сообщества тоже пропадут из доступа.<br>
-  Репозиторию гитхаба я доверяю чуть больше. Это — наш потęнциально последний канал коммуникации.<br>
+  Репозиторию гитхаба я доверяю чуть больше, чем социальным сетям. Это — наш потęнциально последний канал коммуникации.<br>
   Однако, пользоваться этим репозиторием можно и просто как сайтом, если для вас это удобнее.
   </p>
    <img src="universecentre.jpg" width="800">
@@ -192,7 +307,7 @@
   <h4 id="mirrors">У этого сайта есть зеркала:</h4>
    <ul>
      <li><a href="https://sarcoscyphushka.github.io/glirarium/centre/" target="_blank" rel="noopener noreferrer">раз</a> (основной сайт на гитхабе)</li>
-     <li><a href="https://glirarium.netlify.app/centre/" target="_blank" rel="noopener noreferrer">два</a> (автоматически подгружает обновления с гитхаба, пока тот не заблокирован)</li>
+     <li><a href="https://glirarium.netlify.app/centre/" target="_blank" rel="noopener noreferrer">два</a> (автоматически подгружает обновления с гитхаба, пока тот не заблокирован, иногда не работает)</li>
      <li><a href="http://s97717jn.beget.tech/centre/" target="_blank" rel="noopener noreferrer">три</a> (обновляется вручную, поэтому вы можете видеть не последнюю версию)</li>
      <li><a href="#" id="ipfs-mirror" target="_blank" rel="noopener noreferrer" style="display:none;">четыре</a> (на крайний случай: IPFS-версия; тоже обновляется вручную и сложнее, а значит и реже всего)</li>
    </ul>
@@ -209,5 +324,102 @@
   ipfsLink.style.display = "inline"; 
   ipfsLink.textContent = "четыре";
 </script>
+
+ <script>
+  const handle = document.getElementById("drawer-handle");
+  const drawer = document.getElementById("right-drawer");
+  const closeBtn = document.getElementById("close-drawer");
+
+  handle.addEventListener("click", () => {
+    drawer.classList.add("open");
+    handle.style.display = "none"; // Спрячем ручку
+  });
+
+  closeBtn.addEventListener("click", () => {
+    drawer.classList.remove("open");
+    handle.style.display = "flex"; // Покажем ручку снова
+  });
+
+   document.addEventListener("click", (e) => {
+    const isClickInsideDrawer = drawer.contains(e.target);
+    const isClickOnHandle = handle.contains(e.target);
+
+    if (!isClickInsideDrawer && !isClickOnHandle) {
+      drawer.classList.remove("open");
+      handle.style.display = "flex";
+    }
+  });
+    
+</script>
+
+<script>
+const images = document.querySelectorAll('.floating-image');
+
+images.forEach(img => {
+  if (img.id !== "cloud") { 
+    img.addEventListener('click', () => {
+      img.style.display = 'none';
+
+      setTimeout(() => {
+        img.style.display = 'block';
+      }, 20000);
+    });
+  }
+});
+</script>
+  
+<script>
+const imagesTwo = document.querySelectorAll('.floating-image-two');
+   
+imagesTwo.forEach(img => {
+  img.addEventListener('click', () => {
+    img.style.display = 'none'; // скрыть картинку
+
+    setTimeout(() => {
+      img.style.display = 'block'; // показать снова через 5 сек
+    }, 25000);
+  });
+});
+</script>
+
+<script>
+  const toggleBtn = document.getElementById("toggleImagesBtn");
+  let imagesVisible = true;
+
+  toggleBtn.addEventListener("click", () => {
+    const floatingImages = document.querySelectorAll('.floating-image, .floating-image-two');
+
+    floatingImages.forEach(img => {
+      img.classList.toggle("hidden-floating");
+    });
+
+    imagesVisible = !imagesVisible;
+
+    toggleBtn.src = imagesVisible ? "skucno.png" : "veselo.png";
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cloudImage = document.getElementById('cloud');
+  let isFlyingOut = false;
+
+  cloudImage.addEventListener('click', () => {
+    if (!isFlyingOut) {
+      cloudImage.classList.remove('fly-in');
+      cloudImage.classList.add('fly-out');
+      isFlyingOut = true;
+
+      // через 20 секунд вернуть обратно с анимацией
+      setTimeout(() => {
+        cloudImage.classList.remove('fly-out');
+        cloudImage.classList.add('fly-in');
+        isFlyingOut = false;
+      }, 20000);
+    }
+  });
+});
+</script>
+  
 </body>
 </html>
