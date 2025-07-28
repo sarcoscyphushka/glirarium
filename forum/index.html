@@ -141,6 +141,14 @@
   </div>
 
   <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+  <script>
+    window.onload = () => {
+      const iframe = document.querySelector("iframe")
+      iframe.onload = () => {
+        document.getElementById("cusdis_thread").style.height = document.querySelector("iframe").contentDocument.querySelector("body").scrollHeight + 20 + "px";
+      }
+    }
+  </script>
 
 </body>
 </html>
